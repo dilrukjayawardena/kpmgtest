@@ -1,0 +1,24 @@
+
+Prerequists:
+1.you need to provide credential.json file for service account to run terraform.Store in in root folder with name credentails.json
+2.setup the project_id in variables.tf
+3.If you already configured deault firestore db please comeent out the module db in main.tf file
+    module "db" {
+    source = "./db"
+    project_id = var.project_id
+    location = var.db_location
+    }
+
+To deploy:
+
+Run:
+initialize:
+$ terraform init
+
+validate:
+$ terraform plan
+
+deploy:
+$ terraform apply
+
+
